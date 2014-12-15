@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">App Armenia</string>
+    <string name="app_name_uppercase">APP ARMENIA</string>
+    <string name="download_count">Downloads: 1450</string>
+    <string name="drawer_open">Open drawer</string>
+    <string name="drawer_close">Close drawer</string>
+    <string name="dummy_number">190341</string>
+    <string name="share">Share</string>
+    <string name="set_as_notification">Set as notification</string>
+    <string name="set_as_ringtone">Set as ringtone</string>
+    <string name="set_as_wallpaper">Set as wallpaper</string>
+    <string name="download">Download</string>
+    <string name="done">Done!</string>
+    
+    <string name="tab_applications_categories">Categories</string>
+    <string name="tab_applications_top">Top</string>
+    <string name="tab_applications_trending">Trending</string>
+    <string name="tab_applications_new">New</string>
+    
+    <string name="tab_notifications_preview">Preview</string>
+    <string name="tab_notifications_details">Details</string>
+    
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="action_share">Share</string>
+    
+    <string name="search_hint">Search...</string>
+    
+    <string name="about_us">
+		<![CDATA[
+		<html>
+		 <head></head>
+		 <body style="text-align:justify;color:black;background-color:white;">
+		  Lorem ipsum dolor sit amet, consectetur 
+		  adipiscing elit. Nunc pellentesque, urna
+		  nec hendrerit pellentesque, risus massaa
+		  assklflaf skjdfh ajshd wklans aasf dsfsd
+		  asfidf dkfjks sdiuj,nsdsdkjf dsjfhkssddj
+		  dsfifd eijfflasfhidffs.<br/><br/>
+		  Lsfjkhskjfh smdf ufyh asjfh skdfh sdkfhk
+		  dsfjkdsf eihfks alfnkdn. 
+		 </body>
+		</html>
+		]]>
+    </string>
+    
+    <string name="beeline_txt">
+		<![CDATA[
+		<html>
+		 <head></head>
+		 <body style="text-align:justify;color:black;background-color:white;">
+		  Lorem ipsum dolor sit amet, consectetur 
+		  adipiscing elit. Nunc pellentesque, urna
+		  nec hendrerit pellentesque, risus massaa
+		  assklflaf skjdfh ajshd wklans aasf dsfsd
+		  asfidf dkfjks sdiuj,nsdsdkjf dsjfhkssddj
+		  dsfifd eijfflasfhidffs.<br/><br/>
+		  Lsfjkhskjfh smdf ufyh asjfh skdfh sdkfhk
+		  dsfjkdsf eihfks alfnkdn. 
+		 </body>
+		</html>
+		]]>
+    </string>
+    
+    <string name="beeline_img">
+		<![CDATA[
+		<html>
+		 <head></head>
+		 <body style="text-align:justify;color:black;background-color:white;">
+		  <img src="http://app.am/images/20/840869552922_original.png"/> 
+		 </body>
+		</html>
+		]]>
+    </string>
+
+</resources>

@@ -1,0 +1,99 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabs</item>
+        <item name="android:actionBarTabTextStyle">@style/MyActionBarTabTextStyle</item>
+		<item name="android:homeAsUpIndicator">@drawable/ic_arrow_back</item>
+		<item name="android:actionOverflowButtonStyle">@style/MyActionBarOverFlowMenu</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="actionBarTabStyle">@style/MyActionBarTabs</item>
+        <item name="actionBarTabTextStyle">@style/MyActionBarTabTextStyle</item>
+        <item name="homeAsUpIndicator">@drawable/ic_arrow_back</item>
+        <item name="actionOverflowButtonStyle">@style/MyActionBarOverFlowMenu</item>
+        
+    </style>
+
+    <style name="MyActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+        <item name="android:background">@color/background_red</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_solid_example</item>
+
+        <!-- Support library compatibility -->
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+        <item name="background">@color/background_red</item>
+        <item name="backgroundStacked">@drawable/ab_stacked_solid_example</item>
+        
+    </style>
+
+    <!-- ActionBar title text -->
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="MyActionBarTabs" parent="@style/Widget.AppCompat.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_indicator_ab_example</item>
+        <item name="android:divider">@null</item>
+    </style>
+    
+    <!-- action bar tab text -->
+    <style name="MyActionBarTabTextStyle" parent="@style/Widget.AppCompat.ActionBar.TabText">
+        <item name="android:textColor">@color/background_red</item>
+    </style>
+    
+    <style name="MyActionBarOverFlowMenu" parent="@style/Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_overflow_menu</item>
+    </style>
+    
+    <style name="MyActionBarWidget" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="searchViewSearchIcon">@drawable/ic_search</item>
+        <item name="searchViewCloseIcon">@drawable/ic_dot</item>
+        <item name="searchViewAutoCompleteTextView">@style/MyActionBarWidgetAutoCompleteTextView</item>
+    </style>
+ 
+    <style name="MyActionBarWidgetAutoCompleteTextView" parent="Widget.AppCompat.Light.AutoCompleteTextView">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme"></style>
+
+    
+    <!-- Custom Rating Bars. 1. Big, 2. Small -->
+    <style name="customRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_rating_bar_2</item>
+        <item name="android:minHeight">32dip</item>
+        <item name="android:maxHeight">32dip</item>
+    </style>
+
+    <style name="customRatingBarSmall" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_rating_bar_1</item>
+        <item name="android:minHeight">18dip</item>
+        <item name="android:maxHeight">18dip</item>
+    </style>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="black_1">#111111</color>
+    <color name="drawer_item_black">#252525</color>
+    <color name="red">#f65b62</color>
+    <color name="background_red">#E23239</color>
+    <color name="transparent">#00000000</color>
+    <color name="grey">#EFEFF4</color>
+    <color name="grey_1">#C7C7C7</color>
+    <color name="grey_2">#636363</color>
+    <color name="drawer_item_grey">#666666</color>
+    <color name="yellow">#FFD345</color>
+    
+    <color name="applications_color">#ADC47A</color>
+    <color name="wallpapers_color">#EDBC60</color>
+    <color name="ringtons_color">#F77B7E</color>
+    <color name="notifications_color">#67C4A6</color>
+
+</resources>
