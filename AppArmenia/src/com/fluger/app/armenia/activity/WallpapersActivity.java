@@ -53,7 +53,7 @@ public class WallpapersActivity extends Activity implements ActionBar.TabListene
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_wallpapers);
+		setContentView(R.layout.activity_wallpapers);
 		position = getIntent().getIntExtra("position", 0);
 
 		getItemsListByType(Constants.TYPE_TRENDING);

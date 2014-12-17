@@ -7,6 +7,8 @@ public class Constants {
 	
 	public static final String NOTIFICATIONS_CACHE_URL = "/AppArmenia/notifications";
 	public static final String RINGTONES_CACHE_URL = "/AppArmenia/ringtones";
+	public static final String WALLPAPERS_CACHE_URL = "/AppArmenia/wallpapers";
+	public static final String APPLICATIONS_CACHE_URL = "/AppArmenia/applications";
 	
 	public static final String BEELINE_IMG_URL = "http://app.am/images/20/840869552922_original.png";
 	public static final String SETTINGS = "Settings";

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RelativeLayout
+            android:id="@+id/application_header_container"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:background="@color/grey_4" >
+
+            <TextView
+                android:id="@+id/update_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/updated"
+                android:textColor="@color/grey_3"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/update_date_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/update_txt"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/updated_date"
+                android:textColor="@color/grey_3"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/free_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/free"
+                android:textColor="@color/green"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/application_data_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/application_header_container"
+            android:padding="15dp" >
+
+            <ImageView
+                android:id="@+id/applications_item_img"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_ringtone_default" />
+
+            <LinearLayout
+                android:id="@+id/applications_item_container"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@id/applications_item_img"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    android:id="@+id/applications_item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+
+                <RatingBar
+                    android:id="@+id/applications_item_rating"
+                    style="@style/customRatingBarSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:isIndicator="true"
+                    android:max="5"
+                    android:numStars="5"
+                    android:progress="2"
+                    android:stepSize="1" />
+
+                <TextView
+                    android:id="@+id/applications_item_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="@string/download_count"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/application_description_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/application_data_container"
+            android:padding="15dp" >
+
+            <TextView
+                android:id="@+id/applications_item_description_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="@string/lorem_ispum"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/read_more_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/applications_item_description_txt"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/more"
+                android:textSize="12sp" />
+
+            <ImageButton
+                android:id="@+id/read_more_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/read_more_txt"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/ic_arrow_down_mini"
+                android:contentDescription="@string/app_name" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/application_screenshots_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/application_description_container"
+            android:padding="10dp" >
+
+            <Gallery
+                android:id="@+id/applications_screenshots_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/application_screenshots_slider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/applications_screenshots_gallery"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal" >
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/application_footer_container"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@id/application_screenshots_container"
+            android:background="@color/grey_4"
+            android:gravity="center_vertical"
+            android:padding="5dp" >
+
+            <TextView
+                android:id="@+id/install_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/red"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_install"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:padding="5dp"
+                android:text="@string/install"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>

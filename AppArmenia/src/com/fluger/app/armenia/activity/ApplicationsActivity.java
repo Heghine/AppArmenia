@@ -25,6 +25,7 @@ import android.widget.SearchView;
 
 import com.fluger.app.armenia.HomeActivity;
 import com.fluger.app.armenia.R;
+import com.fluger.app.armenia.activity.details.ApplicationDetailsActivity;
 import com.fluger.app.armenia.backend.API;
 import com.fluger.app.armenia.backend.API.RequestObserver;
 import com.fluger.app.armenia.data.AppCategoryItemData;
@@ -48,7 +49,7 @@ public class ApplicationsActivity extends Activity implements ActionBar.TabListe
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_applications);
+		setContentView(R.layout.activity_applications);
 		
 		position = getIntent().getIntExtra("position", 0);
 		
@@ -125,6 +126,16 @@ public class ApplicationsActivity extends Activity implements ActionBar.TabListe
 		itemsList = (ListView) findViewById(R.id.items_list);
 		itemsList.setAdapter(itemsAdapter);
 		itemsList.setVisibility(View.GONE);
+		itemsList.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				AppArmeniaManager.getInstance().itemDataToBePassed = itemsAdapter.getItem(position);
+				Intent applicationDetailsActivity = new Intent(ApplicationsActivity.this, ApplicationDetailsActivity.class);
+				applicationDetailsActivity.putExtra(HomeActivity.POSITION, ApplicationsActivity.this.position);
+				startActivity(applicationDetailsActivity);
+			}
+		});
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}

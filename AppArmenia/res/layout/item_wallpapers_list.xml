@@ -8,34 +8,37 @@
         android:layout_width="match_parent"
         android:layout_height="270dp"
         android:layout_margin="16dp"
-        android:scaleType="centerCrop"
-        android:background="@drawable/default_background" />
+        android:background="@drawable/ringtones_default_background"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop" />
 
-    <LinearLayout 
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/first">
-    <ImageView
-        android:id="@+id/second"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="8dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ringtones_default_background" />
+        android:layout_below="@id/first" >
 
-    <ImageView
-        android:id="@+id/third"
-        android:layout_width="135dp"
-        android:layout_height="135dp"
-        android:layout_weight="1"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="16dp"
-        android:layout_toRightOf="@id/second"
-        android:scaleType="centerCrop"
-        android:src="@drawable/ringtones_default_background" />
-</LinearLayout>
+        <ImageView
+            android:id="@+id/second"
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="8dp"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:background="@drawable/ringtones_default_background" />
+
+        <ImageView
+            android:id="@+id/third"
+            android:layout_width="135dp"
+            android:layout_height="135dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="centerCrop"
+            android:background="@drawable/ringtones_default_background" />
+    </RelativeLayout>
+
 </RelativeLayout>

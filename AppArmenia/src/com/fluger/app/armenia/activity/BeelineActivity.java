@@ -28,7 +28,7 @@ public class BeelineActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_beeline);
+		setContentView(R.layout.activity_beeline);
 		
 		position = getIntent().getIntExtra("position", 0);
 		ImageView imgView = ((ImageView) findViewById(R.id.beeline_img_container));

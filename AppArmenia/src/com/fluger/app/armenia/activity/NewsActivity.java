@@ -21,7 +21,7 @@ public class NewsActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_news);
+		setContentView(R.layout.activity_news);
 		position = getIntent().getIntExtra("position", 0);
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}

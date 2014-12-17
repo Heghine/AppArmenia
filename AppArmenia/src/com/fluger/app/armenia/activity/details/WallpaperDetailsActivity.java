@@ -1,14 +1,19 @@
 package com.fluger.app.armenia.activity.details;
 
+import java.io.File;
 import java.util.ArrayList;
 import android.app.ActionBar;
 import android.app.ActionBar.Tab;
 import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
+import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -28,8 +33,11 @@ import com.fluger.app.armenia.data.AppCategoryItemData;
 import com.fluger.app.armenia.manager.AppArmeniaManager;
 import com.fluger.app.armenia.util.Constants;
 import com.fluger.app.armenia.util.DetailsAdapter;
+import com.fluger.app.armenia.util.FileDownloaderTask;
+import com.fluger.app.armenia.util.OnFileDownloadListener;
 import com.fluger.app.armenia.util.Utils;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.ImageSize;
 
 public class WallpaperDetailsActivity extends Activity implements ActionBar.TabListener {
 
@@ -41,16 +49,17 @@ public class WallpaperDetailsActivity extends Activity implements ActionBar.TabL
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_details_wallpaper);
+		setContentView(R.layout.activity_details_wallpaper);
 
 		position = getIntent().getIntExtra(HomeActivity.POSITION, 0);
 
 		itemData = AppArmeniaManager.getInstance().itemDataToBePassed;
-		
+
 		final String url = Constants.FILES_URL + itemData.imageUrl;
 		final String fileName = url.substring(url.lastIndexOf("/"));
-		
-		ImageLoader.getInstance().loadImage(url, null);
+
+		ImageSize targetSize = new ImageSize(150, 150);
+		ImageLoader.getInstance().loadImage(url, targetSize, null);
 		ImageLoader.getInstance().displayImage(url, ((ImageView) findViewById(R.id.wallpaper_bg_img)), AppArmeniaManager.getInstance().options);
 
 		detailsView = ((RelativeLayout) findViewById(R.id.details_container));
@@ -63,36 +72,36 @@ public class WallpaperDetailsActivity extends Activity implements ActionBar.TabL
 		details.add("User: ");
 		details.add("Rating");
 
-		DetailsAdapter categoriesAdapter = new DetailsAdapter(this, R.layout.item_details_list, details);
+		DetailsAdapter categoriesAdapter = new DetailsAdapter(this, R.layout.item_details_list, details, Constants.WALLPAPERS_CATEGORY_POSITION);
 		ListView detailsListView = ((ListView) findViewById(R.id.details_list));
 		detailsListView.setAdapter(categoriesAdapter);
 
-//		if (!Utils.fileExists(fileName, Constants.WALLPAPERS_CATEGORY_POSITION)) {
-//			((TextView) findViewById(R.id.set_as_wallpaper_txt)).setText(R.string.download);
-//		} else {
-//			((TextView) findViewById(R.id.set_as_wallpaper_txt)).setText(R.string.set_as_wallpaper);
-//		}
+		if (!Utils.fileExists(fileName, Constants.WALLPAPERS_CATEGORY_POSITION)) {
+			((TextView) findViewById(R.id.set_as_wallpaper_txt)).setText(R.string.download);
+		} else {
+			((TextView) findViewById(R.id.set_as_wallpaper_txt)).setText(R.string.set_as_wallpaper);
+		}
 		((TextView) findViewById(R.id.set_as_wallpaper_txt)).setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-//				if (!Utils.fileExists(fileName, Constants.NOTIFICATIONS_CATEGORY_POSITION)) {
-//					(new FileDownloaderTask(Constants.NOTIFICATIONS_CATEGORY_POSITION, new OnFileDownloadListener() {
-//
-//						@Override
-//						public void onDownloadSuccess() {
-//							((TextView) findViewById(R.id.set_as_notification_txt)).setText(R.string.set_as_notification);
-//						}
-//
-//						@Override
-//						public void onDownloadFailure() {
-//
-//						}
-//					})).execute(url);
-//				} else {
+				if (!Utils.fileExists(fileName, Constants.WALLPAPERS_CATEGORY_POSITION)) {
+					(new FileDownloaderTask(Constants.WALLPAPERS_CATEGORY_POSITION, new OnFileDownloadListener() {
+
+						@Override
+						public void onDownloadSuccess() {
+							((TextView) findViewById(R.id.set_as_wallpaper_txt)).setText(R.string.set_as_wallpaper);
+						}
+
+						@Override
+						public void onDownloadFailure() {
+
+						}
+					})).execute(url);
+				} else {
 					setAsWallpaper(fileName);
 					Toast.makeText(WallpaperDetailsActivity.this, R.string.done, Toast.LENGTH_LONG).show();
-//				}
+				}
 			}
 		});
 
@@ -179,6 +188,24 @@ public class WallpaperDetailsActivity extends Activity implements ActionBar.TabL
 	}
 
 	private void setAsWallpaper(String fileName) {
-		
+		Bitmap bitmap = null;
+		try {
+			File root = Environment.getExternalStorageDirectory();
+			String filePath = root.getAbsolutePath() + Constants.WALLPAPERS_CATEGORY_POSITION + fileName;
+			bitmap = BitmapFactory.decodeFile(filePath);
+
+			if (bitmap != null) {
+				WallpaperManager myWallpaperManager = WallpaperManager.getInstance(this);
+				myWallpaperManager.setBitmap(bitmap);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			bitmap = null;
+		} finally {
+			if (bitmap != null) {
+				bitmap.recycle();
+			}
+		}
+
 	}
 }

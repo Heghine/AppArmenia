@@ -36,6 +36,7 @@ public class API {
 	public static final String GET_WALLPAPERS_SEARCH_LIST = "wtsearch/";
 	public static final String GET_RINGTONES_SEARCH_LIST = "rtsearch/";
 	public static final String GET_NOTIFICATIONS_SEARCH_LIST = "ntsearch/";
+	public static final String GET_APPS_SCREENSHOTS = "screenshots/";
 	
 	public static final String TAG = "API";
 	
@@ -56,6 +57,10 @@ public class API {
 	
 	public static void getAppsSearchList(int limit, int offset, String tag, RequestObserver observer) {
 		sendAsyncRequestGet(GET_APPS_SEARCH_LIST, limit + "/" + offset + "/" + tag, observer);
+	}
+	
+	public static void getAppsScreenshots(int appId, RequestObserver observer) {
+		sendAsyncRequestGet(GET_APPS_SCREENSHOTS, "" + appId, observer);
 	}
 	
 	public static void getWallpapersList(int limit, int offset, RequestObserver observer) {

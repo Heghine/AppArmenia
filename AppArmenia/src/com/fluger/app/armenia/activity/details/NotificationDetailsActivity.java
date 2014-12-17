@@ -52,7 +52,7 @@ public class NotificationDetailsActivity extends Activity implements ActionBar.T
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_details_notification);
+		setContentView(R.layout.activity_details_notification);
 
 		position = getIntent().getIntExtra(HomeActivity.POSITION, 0);
 
@@ -79,7 +79,7 @@ public class NotificationDetailsActivity extends Activity implements ActionBar.T
 		details.add("User: ");
 		details.add("Rating");
 
-		DetailsAdapter categoriesAdapter = new DetailsAdapter(this, R.layout.item_details_list, details);
+		DetailsAdapter categoriesAdapter = new DetailsAdapter(this, R.layout.item_details_list, details, Constants.NOTIFICATIONS_CATEGORY_POSITION);
 		ListView detailsListView = ((ListView) findViewById(R.id.details_list));
 		detailsListView.setAdapter(categoriesAdapter);
 

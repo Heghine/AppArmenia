@@ -23,7 +23,7 @@ public class AboutUsActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_about_us);
+		setContentView(R.layout.activity_about_us);
 		position = getIntent().getIntExtra("position", 0);
 		
 		WebView view = ((WebView) findViewById(R.id.about_us_container));

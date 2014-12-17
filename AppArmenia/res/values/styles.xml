@@ -88,6 +88,9 @@
     <color name="grey">#EFEFF4</color>
     <color name="grey_1">#C7C7C7</color>
     <color name="grey_2">#636363</color>
+    <color name="grey_4">#e1e1e1</color>
+    <color name="grey_3">#767676</color>
+    <color name="green">#4bb94b</color>    
     <color name="drawer_item_grey">#666666</color>
     <color name="yellow">#FFD345</color>
     

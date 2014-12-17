@@ -24,7 +24,7 @@ public class SettingsActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_settings);
+		setContentView(R.layout.activity_settings);
 		
 		ArrayList<TagItemData> settings = new ArrayList<TagItemData>();
 		for (int i = 0; i < Constants.MENU_SETTINGS.length; i++) {

@@ -18,10 +18,13 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import com.fluger.app.armenia.HomeActivity;
 import com.fluger.app.armenia.R;
+import com.fluger.app.armenia.activity.details.ApplicationDetailsActivity;
 import com.fluger.app.armenia.activity.details.NotificationDetailsActivity;
 import com.fluger.app.armenia.activity.details.RingtonesDetailsActivity;
+import com.fluger.app.armenia.activity.details.WallpaperDetailsActivity;
 import com.fluger.app.armenia.data.AppCategory;
 import com.fluger.app.armenia.data.AppCategoryItemData;
 import com.fluger.app.armenia.manager.AppArmeniaManager;
@@ -125,6 +128,16 @@ public class AppCategoriesFragment extends Fragment {
 						Intent ringtonesDetailsActivity = new Intent(AppCategoriesFragment.this.getActivity(), NotificationDetailsActivity.class);
 						ringtonesDetailsActivity.putExtra(HomeActivity.POSITION, Constants.NOTIFICATIONS_MENU_POSITION);
 						startActivity(ringtonesDetailsActivity);
+					} else if (child.category == Constants.WALLPAPERS_CATEGORY_POSITION) {
+						AppArmeniaManager.getInstance().itemDataToBePassed = child;
+						Intent ringtonesDetailsActivity = new Intent(AppCategoriesFragment.this.getActivity(), WallpaperDetailsActivity.class);
+						ringtonesDetailsActivity.putExtra(HomeActivity.POSITION, Constants.WALLPAPERS_MENU_POSITION);
+						startActivity(ringtonesDetailsActivity);
+					} else if (child.category == Constants.APPLICATIONS_CATEGORY_POSITION) {
+						AppArmeniaManager.getInstance().itemDataToBePassed = child;
+						Intent applicationDetailsActivity = new Intent(AppCategoriesFragment.this.getActivity(), ApplicationDetailsActivity.class);
+						applicationDetailsActivity.putExtra(HomeActivity.POSITION, Constants.APPLICATIONS_MENU_POSITION);
+						startActivity(applicationDetailsActivity);
 					}
 				}
 			});

@@ -21,7 +21,7 @@ public class ReviewsActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_reviews);
+		setContentView(R.layout.activity_reviews);
 		
 		position = getIntent().getIntExtra("position", 0);
 		getActionBar().setDisplayHomeAsUpEnabled(true);

@@ -21,6 +21,8 @@ public class AppCategoryItemData {
 	public int rating;
 	public boolean isFree;
 	public String audioUrl;
+	public String uploaded;
+	public String androidUrl;
 	
 	public AppCategoryItemData() {
 		
@@ -44,6 +46,11 @@ public class AppCategoryItemData {
 		if (data.has("and_audio")) {
 			audioUrl = data.optString("and_audio", "");
 		}
+		uploaded = data.optString("uploaded", "");
+		if (data.has("android_url")) {
+			androidUrl = data.optString("android_url", ""); 
+			androidUrl = "market://details?id=com.touchnote.android";//TODO should be removed
+		}
 	}
 	
 	@Override
@@ -62,6 +69,8 @@ public class AppCategoryItemData {
 		newData.isFree = this.isFree;
 		newData.tags = this.tags;
 		newData.audioUrl = this.audioUrl;
+		newData.uploaded = this.uploaded;
+		newData.androidUrl = this.androidUrl;
 		
 		return newData;
 	}

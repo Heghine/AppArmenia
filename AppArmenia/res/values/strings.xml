@@ -64,6 +64,15 @@
 		]]>
     </string>
     
+    <string name="lorem_ispum">Lorem ipsum dolor sit amet, consectetur 
+		  adipiscing elit. Nunc pellentesque, urna
+		  nec hendrerit pellentesque, risus massaa
+		  assklflaf skjdfh ajshd wklans aasf dsfsd
+		  asfidf dkfjks sdiuj,nsdsdkjf dsjfhkssddj
+		  dsfifd eijfflasfhidffs.<br/><br/>
+		  Lsfjkhskjfh smdf ufyh asjfh skdfh sdkfhk
+		  dsfjkdsf eihfks alfnkdn. </string>
+    
     <string name="beeline_img">
 		<![CDATA[
 		<html>
@@ -74,5 +83,12 @@
 		</html>
 		]]>
     </string>
-
+    <string name="updated">Updated: </string>
+    <string name="updated_date">11-12-2014</string>
+    <string name="install">Install</string>
+    <string name="free">FREE</string>
+	<string name="download">Downloads: </string>
+	<string name="more">read more </string>
+	<string name="less">read less </string>
+    
 </resources>

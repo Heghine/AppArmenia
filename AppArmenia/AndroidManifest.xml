@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
 
     <application
         android:allowBackup="true"
@@ -106,6 +107,18 @@
         <activity
             android:name="com.fluger.app.armenia.activity.details.WallpaperDetailsActivity"
             android:parentActivityName="com.fluger.app.armenia.activity.WallpapersActivity"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        
+        <activity
+            android:name="com.fluger.app.armenia.activity.details.ApplicationDetailsActivity"
+            android:parentActivityName="com.fluger.app.armenia.activity.ApplicationsActivity"
+            android:screenOrientation="sensorPortrait" >
+        </activity>
+        
+        <activity
+            android:name="com.fluger.app.armenia.activity.details.ApplicationDetailsActivity"
+            android:parentActivityName="com.fluger.app.armenia.activity.ApplicationsActivity"
             android:screenOrientation="sensorPortrait" >
         </activity>
     </application>

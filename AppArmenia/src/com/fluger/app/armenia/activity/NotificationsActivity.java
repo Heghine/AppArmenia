@@ -46,7 +46,7 @@ public class NotificationsActivity extends Activity implements ActionBar.TabList
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_notifications);
+		setContentView(R.layout.activity_notifications);
 		position = getIntent().getIntExtra(HomeActivity.POSITION, 0);
 
 		getItemsListByType(Constants.TYPE_TRENDING);

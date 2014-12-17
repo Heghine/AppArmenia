@@ -48,7 +48,7 @@ public class RingtonesActivity extends Activity implements ActionBar.TabListener
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.fragment_ringtones);
+		setContentView(R.layout.activity_ringtones);
 		position = getIntent().getIntExtra("position", 0);
 
 		getItemsListByType(Constants.TYPE_TRENDING);
